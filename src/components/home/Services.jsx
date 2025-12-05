@@ -6,7 +6,7 @@ import {
   HiOfficeBuilding,
   HiCode,
 } from "react-icons/hi";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const Services = () => {
   const [headerRef, headerVisible] = useScrollAnimation();

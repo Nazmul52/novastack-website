@@ -1,5 +1,5 @@
 import { HiStar } from "react-icons/hi";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const Testimonials = () => {
   const [headerRef, headerVisible] = useScrollAnimation();

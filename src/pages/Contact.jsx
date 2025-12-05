@@ -1,6 +1,6 @@
-import PageHeader from "../components/about/PageHeader";
-import ContactForm from "../components/contact/ContactForm";
-import ContactInfo from "../components/contact/ContactInfo";
+import PageHeader from "@/components/about/PageHeader";
+import ContactForm from "@/components/contact/ContactForm";
+import ContactInfo from "@/components/contact/ContactInfo";
 
 const Contact = () => {
   return (

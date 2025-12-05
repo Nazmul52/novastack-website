@@ -1,5 +1,5 @@
 import { FaLinkedin, FaTwitter } from "react-icons/fa";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const Team = () => {
   const [headerRef, headerVisible] = useScrollAnimation();

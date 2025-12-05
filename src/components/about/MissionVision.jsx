@@ -1,5 +1,5 @@
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 import { HiLightningBolt, HiEye } from "react-icons/hi";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 const MissionVision = () => {
   const [missionRef, missionVisible] = useScrollAnimation();

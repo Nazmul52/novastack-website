@@ -1,8 +1,8 @@
-import PageHeader from "../components/about/PageHeader";
-import CompanyStory from "../components/about/CompanyStory";
-import MissionVision from "../components/about/MissionVision";
-import Team from "../components/about/Team";
-import CTASection from "../components/common/CTASection";
+import PageHeader from "@/components/about/PageHeader";
+import CompanyStory from "@/components/about/CompanyStory";
+import MissionVision from "@/components/about/MissionVision";
+import Team from "@/components/about/Team";
+import CTASection from "@/components/common/CTASection";
 
 const About = () => {
   return (
