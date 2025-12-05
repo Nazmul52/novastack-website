@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { HiCheckCircle } from "react-icons/hi";
+import { ImSpinner2 } from "react-icons/im";
+import useScrollAnimation from "@hooks/useScrollAnimation";
 
 const ContactForm = () => {
+  const [formRef, formVisible] = useScrollAnimation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -94,8 +97,9 @@ const ContactForm = () => {
 
   return (
     <form
+      ref={formRef}
+      className={`scroll-hidden space-y-6 ${formVisible ? "scroll-visible" : ""}`}
       onSubmit={handleSubmit}
-      className="animate-fade-in-up animation-delay-400 space-y-6"
     >
       {/* Name Field */}
       <div>
@@ -194,7 +198,10 @@ const ContactForm = () => {
         disabled={isSubmitting}
         className="bg-primary-600 hover:bg-primary-700 w-full transform rounded-lg px-8 py-4 font-semibold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100"
       >
-        {isSubmitting ? "Sending..." : "Send Message"}
+        <span className="flex items-center justify-center gap-2">
+          {isSubmitting && <ImSpinner2 className="h-5 w-5 animate-spin" />}
+          <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+        </span>
       </button>
     </form>
   );

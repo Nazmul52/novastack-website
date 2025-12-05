@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi";
+import useScrollAnimation from "@hooks/useScrollAnimation";
 
 const CTASection = ({
   title,
@@ -8,6 +9,8 @@ const CTASection = ({
   secondaryButton,
   variant = "gradient",
 }) => {
+  const [ctaRef, ctaVisible] = useScrollAnimation();
+
   const backgroundClass =
     variant === "gradient"
       ? "py-20 bg-linear-to-r from-primary-600 to-secondary-600"
@@ -25,7 +28,10 @@ const CTASection = ({
 
   return (
     <section className={backgroundClass}>
-      <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <div
+        ref={ctaRef}
+        className={`scroll-hidden mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8 ${ctaVisible ? "scroll-visible" : ""}`}
+      >
         <h2 className={`${titleClass} animate-fade-in-up`}>{title}</h2>
         <p
           className={`${descriptionClass} animate-fade-in-up animation-delay-200`}

@@ -1,7 +1,10 @@
 import { HiMail, HiPhone, HiLocationMarker, HiClock } from "react-icons/hi";
 import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
+import useScrollAnimation from "@hooks/useScrollAnimation";
 
 const ContactInfo = () => {
+  const [infoRef, infoVisible] = useScrollAnimation();
+
   const contactDetails = [
     {
       icon: <HiMail className="h-6 w-6" />,
@@ -48,7 +51,10 @@ const ContactInfo = () => {
   ];
 
   return (
-    <div className="animate-fade-in-up animation-delay-200 space-y-8">
+    <div
+      ref={infoRef}
+      className={`scroll-hidden space-y-8 ${infoVisible ? "scroll-visible" : ""}`}
+    >
       <div>
         <h3 className="mb-6 text-2xl font-bold text-gray-900">Get In Touch</h3>
         <p className="mb-8 leading-relaxed text-gray-600">
