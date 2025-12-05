@@ -93,7 +93,10 @@ const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form
+      onSubmit={handleSubmit}
+      className="animate-fade-in-up animation-delay-400 space-y-6"
+    >
       {/* Name Field */}
       <div>
         <label

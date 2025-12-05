@@ -1,10 +1,18 @@
+import useScrollAnimation from "../../hooks/useScrollAnimation";
+
 const CompanyStory = () => {
+  const [imageRef, imageVisible] = useScrollAnimation();
+  const [textRef, textVisible] = useScrollAnimation();
+
   return (
     <section className="bg-white py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Image/Graphic Side */}
-          <div className="relative">
+          <div
+            ref={imageRef}
+            className={`scroll-hidden relative ${imageVisible ? "scroll-visible" : ""}`}
+          >
             <div className="from-primary-100 to-secondary-100 aspect-square overflow-hidden rounded-2xl bg-linear-to-br">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
@@ -17,7 +25,10 @@ const CompanyStory = () => {
           </div>
 
           {/* Text Side */}
-          <div>
+          <div
+            ref={textRef}
+            className={`scroll-hidden scroll-delay-2 ${textVisible ? "scroll-visible" : ""}`}
+          >
             <h2 className="mb-6 text-3xl font-bold text-gray-900 sm:text-4xl">
               Who We Are
             </h2>

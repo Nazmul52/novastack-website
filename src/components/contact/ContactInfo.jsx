@@ -48,7 +48,7 @@ const ContactInfo = () => {
   ];
 
   return (
-    <div className="space-y-8">
+    <div className="animate-fade-in-up animation-delay-200 space-y-8">
       <div>
         <h3 className="mb-6 text-2xl font-bold text-gray-900">Get In Touch</h3>
         <p className="mb-8 leading-relaxed text-gray-600">

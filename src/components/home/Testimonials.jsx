@@ -1,6 +1,10 @@
 import { HiStar } from "react-icons/hi";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 const Testimonials = () => {
+  const [headerRef, headerVisible] = useScrollAnimation();
+  const [gridRef, gridVisible] = useScrollAnimation();
+
   const testimonials = [
     {
       name: "Sarah Johnson",
@@ -29,7 +33,10 @@ const Testimonials = () => {
     <section className="from-primary-50 to-secondary-50 bg-linear-to-br via-white py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="mb-16 text-center">
+        <div
+          ref={headerRef}
+          className={`scroll-hidden mb-16 text-center ${headerVisible ? "scroll-visible" : ""}`}
+        >
           <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
             What Our Clients Say
           </h2>
@@ -40,11 +47,14 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials grid */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="rounded-2xl bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-2xl"
+              className={`scroll-hidden rounded-2xl bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-2xl scroll-delay-${index + 1} ${gridVisible ? "scroll-visible" : ""}`}
             >
               {/* Rating stars */}
               <div className="mb-4 flex gap-1">

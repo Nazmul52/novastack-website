@@ -1,12 +1,19 @@
 import { HiLightningBolt, HiEye } from "react-icons/hi";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 const MissionVision = () => {
+  const [missionRef, missionVisible] = useScrollAnimation();
+  const [visionRef, visionVisible] = useScrollAnimation();
+
   return (
     <section className="bg-gray-50 py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Mission Card */}
-          <div className="relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+          <div
+            ref={missionRef}
+            className={`scroll-hidden relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl ${missionVisible ? "scroll-visible" : ""}`}
+          >
             <div className="from-primary-100 to-primary-200 text-primary-600 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-linear-to-br">
               <HiLightningBolt className="h-8 w-8" />
             </div>
@@ -24,7 +31,10 @@ const MissionVision = () => {
           </div>
 
           {/* Vision Card */}
-          <div className="relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+          <div
+            ref={visionRef}
+            className={`scroll-hidden scroll-delay-2 relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl ${visionVisible ? "scroll-visible" : ""}`}
+          >
             <div className="from-secondary-100 to-secondary-200 text-secondary-600 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-linear-to-br">
               <HiEye className="h-8 w-8" />
             </div>
