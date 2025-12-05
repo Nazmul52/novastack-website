@@ -1,5 +1,4 @@
 import { FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 const Team = () => {
   const teamMembers = [
@@ -86,22 +85,22 @@ const Team = () => {
 
               {/* Social Links */}
               <div className="flex justify-center gap-3">
-                <Link
-                  to={member.linkedin}
+                <a
+                  href={member.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:bg-primary-600 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-gray-600 transition-colors hover:text-white"
                 >
                   <FaLinkedin className="h-5 w-5" />
-                </Link>
-                <Link
-                  to={member.twitter}
+                </a>
+                <a
+                  href={member.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:bg-primary-600 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-gray-600 transition-colors hover:text-white"
                 >
                   <FaTwitter className="h-5 w-5" />
-                </Link>
+                </a>
               </div>
 
               {/* Decorative element */}
