@@ -1,12 +1,27 @@
+import PageHeader from "../components/about/PageHeader";
+import ContactForm from "../components/contact/ContactForm";
+import ContactInfo from "../components/contact/ContactInfo";
+
 const Contact = () => {
   return (
-    <div className="min-h-screen">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <h1 className="text-center text-4xl font-bold text-gray-900">
-          Contact Page - Coming Soon
-        </h1>
-        <p className="mt-4 text-center text-gray-600">Get in touch with us</p>
-      </div>
+    <div>
+      <PageHeader title="Get In Touch" subtitle="We'd love to hear from you" />
+
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+            {/* Contact Info */}
+            <div>
+              <ContactInfo />
+            </div>
+
+            {/* Contact Form */}
+            <div>
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
