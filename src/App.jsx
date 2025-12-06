@@ -8,10 +8,12 @@ import NotFound from "@pages/NotFound";
 
 // Layout
 import Layout from "@components/layout/Layout";
+import ScrollToTop from "@components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
