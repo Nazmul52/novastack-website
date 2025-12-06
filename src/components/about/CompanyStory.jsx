@@ -14,7 +14,7 @@ const CompanyStory = () => {
             ref={imageRef}
             className={`scroll-hidden relative ${imageVisible ? "scroll-visible" : ""}`}
           >
-            <div className="from-primary-100 to-secondary-100 aspect-square overflow-hidden rounded-2xl bg-linear-to-br">
+            <div className="aspect-square overflow-hidden rounded-2xl bg-gray-400">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
                 alt="Team collaboration"

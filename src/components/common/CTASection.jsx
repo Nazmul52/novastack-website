@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi";
 import useScrollAnimation from "@hooks/useScrollAnimation";
+import Button from "../ui/Button";
 
 const CTASection = () => {
   const animationRef = useScrollAnimation();
@@ -18,13 +19,13 @@ const CTASection = () => {
             and start your digital transformation journey today.
           </p>
 
-          <Link
+          <Button
             to="/contact"
-            className="bg-primary-600 hover:bg-primary-700 inline-flex transform items-center justify-center gap-2 rounded-lg px-8 py-4 font-semibold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl"
+            variant="primary"
+            icon={<HiArrowRight className="h-5 w-5" />}
           >
             Contact Us Today
-            <HiArrowRight className="h-5 w-5" />
-          </Link>
+          </Button>
         </div>
       </div>
     </section>
