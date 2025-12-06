@@ -1,9 +1,15 @@
-import { Link } from "react-router-dom";
 import { HiArrowRight, HiSparkles } from "react-icons/hi";
+import Button from "@components/ui/Button";
+import { Badge, Container, Section } from "@components/ui/UtilityComponents";
+import { STATS } from "@/constants";
 
 const Hero = () => {
   return (
-    <section className="from-primary-50 to-secondary-50 relative overflow-hidden bg-linear-to-br via-white pt-20 pb-32">
+    <Section
+      background="gradient"
+      padding="lg"
+      className="relative overflow-hidden pt-20 pb-32"
+    >
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="bg-primary-200 animate-blob absolute -top-40 -right-40 h-80 w-80 rounded-full opacity-70 mix-blend-multiply blur-xl filter"></div>
@@ -11,14 +17,13 @@ const Hero = () => {
         <div className="bg-accent-200 animate-blob animation-delay-4000 absolute top-1/2 left-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 transform rounded-full opacity-70 mix-blend-multiply blur-xl filter"></div>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Container className="relative">
         <div className="text-center">
           {/* Badge */}
-          <div className="animate-fade-in mb-8 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-md">
-            <HiSparkles className="text-primary-600 h-5 w-5" />
-            <span className="text-sm font-medium text-gray-700">
+          <div className="animate-fade-in mb-8">
+            <Badge icon={<HiSparkles className="h-5 w-5" />}>
               Transforming businesses since 2020
-            </span>
+            </Badge>
           </div>
 
           {/* Main heading */}
@@ -39,45 +44,32 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="animate-fade-in-up animation-delay-400 flex flex-col justify-center gap-4 sm:flex-row">
-            <Link
+            <Button
               to="/contact"
-              className="bg-primary-600 hover:bg-primary-700 inline-flex transform items-center justify-center gap-2 rounded-lg px-8 py-4 font-semibold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-xl"
+              variant="primary"
+              icon={<HiArrowRight className="h-5 w-5" />}
             >
               Get Started
-              <HiArrowRight className="h-5 w-5" />
-            </Link>
-            <Link
-              to="/about"
-              className="border-primary-100 text-primary-600 inline-flex transform items-center justify-center gap-2 rounded-lg border-2 bg-white px-8 py-4 font-semibold shadow-lg transition-all duration-200 hover:scale-105 hover:bg-gray-50 hover:shadow-xl"
-            >
+            </Button>
+            <Button to="/about" variant="secondary">
               Learn More
-            </Link>
+            </Button>
           </div>
 
           {/* Trust indicators */}
           <div className="animate-fade-in animation-delay-600 mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-gray-500">
-            <div className="flex items-center gap-2">
-              <span className="text-primary-600 text-2xl font-semibold">
-                500+
-              </span>
-              <span>Projects Delivered</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-primary-600 text-2xl font-semibold">
-                98%
-              </span>
-              <span>Client Satisfaction</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-primary-600 text-2xl font-semibold">
-                50+
-              </span>
-              <span>Team Members</span>
-            </div>
+            {STATS.map((stat, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <span className="text-primary-600 text-2xl font-semibold">
+                  {stat.value}
+                </span>
+                <span>{stat.label}</span>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

@@ -1,11 +1,12 @@
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@hooks/useScrollAnimation";
+import { Section, Container } from "@components/ui/UtilityComponents";
 
 const PageHeader = ({ title, subtitle }) => {
   const [headerRef, headerVisible] = useScrollAnimation();
 
   return (
-    <section className="from-primary-50 to-secondary-50 relative bg-linear-to-br via-white py-20">
-      <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+    <Section background="gradient">
+      <Container className="text-center">
         <div
           ref={headerRef}
           className={`scroll-hidden ${headerVisible ? "scroll-visible" : ""}`}
@@ -17,8 +18,8 @@ const PageHeader = ({ title, subtitle }) => {
             {subtitle}
           </p>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

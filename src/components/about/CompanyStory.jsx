@@ -1,12 +1,13 @@
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import useScrollAnimation from "@hooks/useScrollAnimation";
+import { Section, Container } from "@components/ui/UtilityComponents";
 
 const CompanyStory = () => {
   const [imageRef, imageVisible] = useScrollAnimation();
   const [textRef, textVisible] = useScrollAnimation();
 
   return (
-    <section className="bg-white py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <Section background="white">
+      <Container>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Image/Graphic Side */}
           <div
@@ -18,6 +19,7 @@ const CompanyStory = () => {
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
                 alt="Team collaboration"
                 className="h-full w-full object-cover mix-blend-overlay"
+                loading="lazy"
               />
             </div>
             {/* Decorative element */}
@@ -55,8 +57,8 @@ const CompanyStory = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 
