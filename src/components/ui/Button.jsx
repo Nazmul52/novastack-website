@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
 
+/**
+ * Reusable button component with multiple variants
+ * @param {string} variant - Button style: 'primary' | 'secondary' | 'outline' | 'ghost'
+ * @param {string} to - Internal navigation link
+ * @param {string} href - External link
+ * @param {ReactNode} icon - Optional icon element
+ */
 const Button = ({
   children,
   variant = "primary",
